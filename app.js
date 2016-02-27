@@ -1,6 +1,7 @@
 'use strict';
 
 var express = require('express');
+var stylus  = require('stylus');
 
 var app = module.exports = exports = express();
 
@@ -14,8 +15,12 @@ app.set('view engine', 'jade');
 
 app.use(require('morgan')('dev'));
 
+app.use(express.static('./public'));
 
-
+app.use(stylus.middleware({
+	src: './public',
+	compress: true
+}));
 
 // DOES'T WORK !!!!!!!!!!!!!!!!!!!!!!!!1
 // app.use(express.logger('dev'));
