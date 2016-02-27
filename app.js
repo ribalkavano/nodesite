@@ -1,14 +1,23 @@
 'use strict';
 
-var http    = require('http');
 var express = require('express');
 
-var app = express();
+var app = module.exports = exports = express();
 
-app.get('/', function(req, res) {
-	res.send('Hellow world');
-});
+// Configuration
 
-http.createServer(app).listen(8123, function() {
-	console.log('Visit http://localhost:8123 to begin your work.');
-});
+app.set('port', process.env.PORT || 8123);
+app.set('views', './views');
+app.set('view engine', 'jade');
+
+// Middleware
+
+app.use(require('morgan')('dev'));
+
+
+
+
+// DON'T WORK !!!!!!!!!!!!!!!!!!!!!!!!1
+// app.use(express.logger('dev'));
+
+// app.use(app.router);

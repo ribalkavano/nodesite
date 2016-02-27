@@ -5,7 +5,8 @@
   "dependencies": {
     "express": "*",
     "stylus": "*",
-    "jade": "*"
+    "jade": "*",
+    "morgan": "*"
   },
   "private": true,
   "repository": {
