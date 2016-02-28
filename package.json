@@ -8,6 +8,10 @@
     "jade": "*",
     "morgan": "*"
   },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-jade": "*"
+  },
   "private": true,
   "repository": {
     "type": "git",
